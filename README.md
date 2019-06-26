@@ -25,7 +25,7 @@ kubectl apply -f kube2iam-psp.yml
 ```
 
 
-3. add the following permissions to the kuberenetes worker IAM role policy. If you installed PKS using the terraforming-aws this role should be `<env_name>_pks-worker`. this could be done via a TF override file to keep it automated. PKS will automatically assign thsi role to all workers.
+3. add the following permissions to the kuberenetes worker IAM role policy. If you installed PKS using the terraforming-aws this role should be `<env_name>_pks-worker`. When deploying PKS the "Kubernetes Cloud Provider Configuration" will alow you to enter this IAM instance profile name, this will automatically be attached to all workers.  you could very easily add these extra policy permissions to the terraform.
 
 ```json
 {
